@@ -1,0 +1,30 @@
+# Pipeline behaviour (generic; dataset-derived dimensions are auto-detected).
+
+pipeline:
+  random_seed: 42
+  primary_metric: f1_macro
+  max_runtime_minutes: 55
+  output_dir: output
+
+split:
+  train_size: 0.70
+  validation_size: 0.15
+  test_size: 0.15
+
+sequence:
+  length: auto
+  channels: auto
+
+training:
+  early_stopping_patience: 5
+  max_epochs: 30
+  batch_size: auto
+
+search:
+  deep_learning_engine: hyperband
+  classical_engine: randomized
+  classical_iterations: 15
+  cv_folds: 3
+
+report:
+  include_clinical_disclaimer: true

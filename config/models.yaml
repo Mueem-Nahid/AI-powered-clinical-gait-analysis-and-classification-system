@@ -1,0 +1,36 @@
+# Bounded search spaces per model family (kept small for the 60-min CPU budget).
+
+lstm:
+  recurrent_type: [lstm, gru]
+  units: [32, 64, 128]
+  num_layers: [1, 2]
+  dropout: [0.2, 0.3, 0.5]
+  learning_rate: [1e-3, 3e-4, 1e-4]
+
+cnn:
+  filters: [32, 64, 128]
+  kernel_size: [3, 5, 7]
+  num_blocks: [1, 2, 3]
+  dropout: [0.2, 0.3, 0.5]
+  learning_rate: [1e-3, 3e-4, 1e-4]
+
+transformer:
+  embed_dim: [32, 64]
+  num_heads: [2, 4]
+  num_blocks: [1, 2]
+  ff_dim: [64, 128]
+  dropout: [0.1, 0.2, 0.3]
+  learning_rate: [1e-3, 3e-4, 1e-4]
+
+dtw_knn:
+  n_neighbors: [1, 3, 5]
+  window: [0.05, 0.1, 0.2]
+  weights: [uniform, distance]
+
+xgboost:
+  n_estimators: [100, 200, 300, 500]
+  max_depth: [3, 4, 6, 8]
+  learning_rate: [0.01, 0.05, 0.1, 0.2]
+  subsample: [0.7, 0.8, 0.9, 1.0]
+  colsample_bytree: [0.7, 0.8, 0.9, 1.0]
+  min_child_weight: [1, 3, 5]
