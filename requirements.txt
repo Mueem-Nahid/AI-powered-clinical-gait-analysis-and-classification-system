@@ -1,7 +1,8 @@
 # Runtime dependencies for the clinical gait AutoML pipeline.
 # Versions finalized against Python 3.11 (TensorFlow has no 3.14 wheel).
 
-pandas>=2.2
+# pandas 3.x binaries are blocked by this machine's Windows Application Control policy.
+pandas==2.2.3
 numpy>=1.26
 scipy>=1.11
 scikit-learn>=1.4
